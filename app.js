@@ -30,18 +30,8 @@ app.use(bodyParser.json())
 app.use(cors())
 
 //  路由
-
-app.get('/api', (req, res) => {
-    log(1)
-    try {
-        // res.sendFile(__dirname + '/index.html')
-        res.status('200').json({
-            data: '123',
-        })
-    } catch (error) {
-        log(error)
-    }
-})
+const thought = require('./routes/index')
+app.use('/api/thought', thought)
 
 //  运行
 const __main = (port = 3030, host = '127.0.0.1') => {

@@ -1,12 +1,18 @@
 const express = require('express')
-const add = express.Router()
+const { log } = require('../utils/utils')
+const Response = require('../models/model')
 
-add.get('/', (request, response) => {
-    if (request.query.admin === 'zelda') {
-        response.sendFile('static/add/add.html')
-    } else {
-        response.json('无权访问')
+const thought = express.Router()
+
+thought.get('/', (req, res) => {
+    try {
+        let data = {
+            abc: 123,
+        }
+        Response.send(res, 200, data)
+    } catch (error) {
+        log(error)
     }
 })
 
-module.exports = add
+module.exports = thought

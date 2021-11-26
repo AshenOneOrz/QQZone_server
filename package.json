@@ -2,7 +2,7 @@
     "name": "qqzone_service",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "app.js",
     "scripts": {
         "run": "nodemon app.js"
     },
